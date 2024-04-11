@@ -1,0 +1,568 @@
+using BepInEx;
+using GorillaNetworking;
+using Photon.Pun;
+using StupidTemplate.Classes;
+using StupidTemplate.Menu;
+using StupidTemplate.Patches;
+using System;
+using static StupidTemplate.Menu.Main;
+using UnityEngine;
+using StupidTemplate.Mods;
+using Facebook.WitAi.Utilities;
+
+namespace yourname.UI
+{
+    [BepInPlugin("org.urname.gui", "MonkeyMenuV5(Reborn)", "5")] // this is customizable
+    public class Main : BaseUnityPlugin
+    {
+        private string inputText = "hi, i dont kno what im doing";
+
+        private string r = "0";
+
+        private string g = "128";
+
+        private string b = "142";
+
+        public static bool isOpen = false;
+
+        public static bool lastCondition = false;
+
+        public static bool modbox;
+
+        public static bool wasdcool;
+
+        public static float aaaaaa = 0f;
+
+        public static string togglebuttontext = "+";
+
+        private Color guicolor = Color.red;
+
+        private Rect rectstuff = new Rect(60, 20, 500, 500);
+        private int numpage;
+        private Color color1;
+        private Color color2;
+
+        void Update() // for RGB
+        {
+            float r = Mathf.Abs(Mathf.Sin(aaaaaa * 0.4f));
+            float g = Mathf.Abs(Mathf.Sin(aaaaaa * 0.5f));
+            float b = Mathf.Abs(Mathf.Sin(aaaaaa * 0.6f));
+            guicolor = new Color(r, g, b);
+            aaaaaa += Time.deltaTime;
+        }
+        public void Start() // helps the rgb idk
+        {
+            ColorUtility.TryParseHtmlString("ffc1cc", out color1);
+            ColorUtility.TryParseHtmlString("98FF98", out color2);
+        }
+        private void OnGUI() // the toggle button for the gui, dont rlly mess with this unless you know what ur doing
+        {
+            if (GUI.Button(new Rect(20, 0, 20, 20), togglebuttontext))
+            {
+                if (isOpen == false)
+                {
+                    togglebuttontext = "-";
+                    isOpen = true;
+                }
+                else
+                {
+                    togglebuttontext = "+";
+                    isOpen = false;
+                }
+            }
+            if (isOpen)
+            {
+                rectstuff = GUI.Window(10000, rectstuff, MainGUI, "Monkey Menu V12");
+            }
+        }
+        /*
+         collumn 1 x: 20
+         collumn 2 x: 200
+         change y by 30 every new button <- USE THESE! THESE ARE FOR MAKING YOUR BUTTONS
+        */ 
+        if (GUI.Button(new Rect(rect scale here), "" ))
+        if (GUI.Button(new Rect(rect scale here), "Solid Water" ))
+        public static void SolidWater()
+        {
+            GameObject water = GameObject.Find("Environment Objects/LocalObjects_Prefab/Beach/B_WaterVolumes");
+            Transform waterTransform = water.transform;
+            for (int i = 0; i < waterTransform.childCount; i++)
+            {
+                GameObject v = waterTransform.GetChild(i).gameObject;
+                v.layer = LayerMask.NameToLayer("Default");
+            }
+        }
+        collumn 1 x: 20
+         collumn 2 y: 430
+        if (GUI.Button(new Rect(rect scale here), "Kill All"))
+{
+    if (Main.balll2<Time.time)
+    {
+        Main.balll2 = Time.time + 3.5f;
+        foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+        {
+            if ((vrrig.mainSkin.material.name.Contains("orangealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("blue")) || (vrrig.mainSkin.material.name.Contains("bluealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("orange")))
+            {
+                SlingshotProjectile component = ObjectPools.instance.Instantiate(-1674517839).GetComponent<SlingshotProjectile>();
+        Color throwableProjectileColor = GorillaTagger.Instance.offlineVRRig.GetThrowableProjectileColor(false);
+        component.Launch(vrrig.transform.position, Vector3.zero, PhotonNetwork.LocalPlayer, false, false, 0, 0.5f, false, throwableProjectileColor);
+                Main.flushmanually();
+            }
+}
+    }
+} 
+" ))
+        collumn 1 x: 20
+         collumn 2 y: 400
+        if (GUI.Button(new Rect(rect scale here), "No tag freeze"))
+    collumn 1 x: 20
+         collumn 2 y: 370
+         public static void NoTagFreeze()
+{
+    GorillaLocomotion.Player.Instance.disableMovement = false;
+}
+
+if (GUI.Button(new Rect(rect scale here), "Mosa Speed"))
+    collumn 1 x: 20
+         collumn 2 y: 400
+         public static void MosaSpeed()
+{
+    GorillaLocomotion.Player.Instance.maxJumpSpeed = 3f;
+}
+
+
+                case 0: // page 1
+
+    if (GUI.Button(new Rect(20, 80, 100, 20), "Join Room"))
+    {
+        PhotonNetworkController.Instance.AttemptToJoinSpecificRoom(inputText);
+    }
+    if (GUI.Button(new Rect(rect scale here), ""))
+        if (GUI.Button(new Rect(rect scale here), ""))
+            if (GUI.Button(new Rect(rect scale here), ""))
+                public static void platforms()
+                {
+                    bool leftGrab = ControllerInputPoller.instance.leftGrab;
+                    if (leftGrab)
+                    {
+                        GameObject gameObject = GameObject.CreatePrimitive((PrimitiveType)3);
+                        gameObject.transform.localScale = new Vector3(0.05f, 0.02f, 0.05f);
+                        gameObject.transform.localPosition = GorillaTagger.Instance.leftHandTransform.localPosition + new Vector3(0f, -0.025f, 0f);
+                        gameObject.transform.localRotation = GorillaTagger.Instance.leftHandTransform.localRotation;
+                        bool flag = ControllerInputPoller.instance.rightGrab = false;
+                        if (flag)
+                        {
+                            UnityEngine.Object.Destroy(gameObject);
+                        }
+                    }
+                    bool rightGrab = ControllerInputPoller.instance.rightGrab;
+                    if (rightGrab)
+                    {
+                        GameObject gameObject2 = GameObject.CreatePrimitive((PrimitiveType)3);
+                        gameObject2.transform.localScale = new Vector3(0.05f, 0.02f, 0.05f);
+                        gameObject2.transform.localPosition = GorillaTagger.Instance.leftHandTransform.localPosition + new Vector3(0f, -0.025f, 0f);
+                        bool flag2 = ControllerInputPoller.instance.rightGrab = false;
+                        if (flag2)
+                        {
+                            UnityEngine.Object.Destroy(gameObject2);
+                        }
+                    }
+                }
+}
+}
+        collumn 1 x: 20
+         collumn 2 y: 460
+        if (GUI.Button(new Rect(rect scale here), "Solid Water"))
+    public static void SolidWater()
+    {
+        GameObject water = GameObject.Find("Environment Objects/LocalObjects_Prefab/Beach/B_WaterVolumes");
+        Transform waterTransform = water.transform;
+        for (int i = 0; i < waterTransform.childCount; i++)
+        {
+            GameObject v = waterTransform.GetChild(i).gameObject;
+            v.layer = LayerMask.NameToLayer("Default");
+        }
+    }
+collumn 1 x: 20
+         collumn 2 y: 430
+        if (GUI.Button(new Rect(rect scale here), "Kill All"))
+{
+    if (Main.balll2 < Time.time)
+    {
+        Main.balll2 = Time.time + 3.5f;
+        foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+        {
+            if ((vrrig.mainSkin.material.name.Contains("orangealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("blue")) || (vrrig.mainSkin.material.name.Contains("bluealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("orange")))
+            {
+                SlingshotProjectile component = ObjectPools.instance.Instantiate(-1674517839).GetComponent<SlingshotProjectile>();
+                Color throwableProjectileColor = GorillaTagger.Instance.offlineVRRig.GetThrowableProjectileColor(false);
+                component.Launch(vrrig.transform.position, Vector3.zero, PhotonNetwork.LocalPlayer, false, false, 0, 0.5f, false, throwableProjectileColor);
+                Main.flushmanually();
+            }
+        }
+    }
+}
+" ))
+        collumn 1 x: 20
+         collumn 2 y: 400
+        if (GUI.Button(new Rect(rect scale here), "No tag freeze"))
+    collumn 1 x: 20
+         collumn 2 y: 370
+         public static void NoTagFreeze()
+{
+    GorillaLocomotion.Player.Instance.disableMovement = false;
+}
+
+if (GUI.Button(new Rect(rect scale here), "Mosa Speed"))
+    collumn 1 x: 20
+         collumn 2 y: 400
+         public static void MosaSpeed()
+{
+    GorillaLocomotion.Player.Instance.maxJumpSpeed = 3f;
+}
+if (GUI.Button(new Rect(rect scale here), ""))
+    if (GUI.Button(new Rect(rect scale here), ""))
+        if (GUI.Button(new Rect(rect scale here), ""))
+            public static void platforms()
+            {
+                bool leftGrab = ControllerInputPoller.instance.leftGrab;
+                if (leftGrab)
+                {
+                    GameObject gameObject = GameObject.CreatePrimitive((PrimitiveType)3);
+                    gameObject.transform.localScale = new Vector3(0.05f, 0.02f, 0.05f);
+                    gameObject.transform.localPosition = GorillaTagger.Instance.leftHandTransform.localPosition + new Vector3(0f, -0.025f, 0f);
+                    gameObject.transform.localRotation = GorillaTagger.Instance.leftHandTransform.localRotation;
+                    bool flag = ControllerInputPoller.instance.rightGrab = false;
+                    if (flag)
+                    {
+                        UnityEngine.Object.Destroy(gameObject);
+                    }
+                }
+                bool rightGrab = ControllerInputPoller.instance.rightGrab;
+                if (rightGrab)
+                {
+                    GameObject gameObject2 = GameObject.CreatePrimitive((PrimitiveType)3);
+                    gameObject2.transform.localScale = new Vector3(0.05f, 0.02f, 0.05f);
+                    gameObject2.transform.localPosition = GorillaTagger.Instance.leftHandTransform.localPosition + new Vector3(0f, -0.025f, 0f);
+                    bool flag2 = ControllerInputPoller.instance.rightGrab = false;
+                    if (flag2)
+                    {
+                        UnityEngine.Object.Destroy(gameObject2);
+                    }
+                }
+            }
+    }
+}
+        collumn 1 x: 20
+         collumn 2 y: 460
+        if (GUI.Button(new Rect(rect scale here), "Solid Water"))
+    public static void SolidWater()
+    {
+        GameObject water = GameObject.Find("Environment Objects/LocalObjects_Prefab/Beach/B_WaterVolumes");
+        Transform waterTransform = water.transform;
+        for (int i = 0; i < waterTransform.childCount; i++)
+        {
+            GameObject v = waterTransform.GetChild(i).gameObject;
+            v.layer = LayerMask.NameToLayer("Default");
+        }
+    }
+collumn 1 x: 20
+         collumn 2 y: 430
+        if (GUI.Button(new Rect(rect scale here), "Kill All"))
+{
+    if (Main.balll2 < Time.time)
+    {
+        Main.balll2 = Time.time + 3.5f;
+        foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+        {
+            if ((vrrig.mainSkin.material.name.Contains("orangealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("blue")) || (vrrig.mainSkin.material.name.Contains("bluealive") && GorillaTagger.Instance.offlineVRRig.mainSkin.material.name.Contains("orange")))
+            {
+                SlingshotProjectile component = ObjectPools.instance.Instantiate(-1674517839).GetComponent<SlingshotProjectile>();
+                Color throwableProjectileColor = GorillaTagger.Instance.offlineVRRig.GetThrowableProjectileColor(false);
+                component.Launch(vrrig.transform.position, Vector3.zero, PhotonNetwork.LocalPlayer, false, false, 0, 0.5f, false, throwableProjectileColor);
+                Main.flushmanually();
+            }
+        }
+    }
+}
+" ))
+        collumn 1 x: 20
+         collumn 2 y: 400
+        if (GUI.Button(new Rect(rect scale here), "No tag freeze"))
+    collumn 1 x: 20
+         collumn 2 y: 370
+         public static void NoTagFreeze()
+{
+    GorillaLocomotion.Player.Instance.disableMovement = false;
+}
+
+if (GUI.Button(new Rect(rect scale here), "Mosa Speed"))
+    collumn 1 x: 20
+         collumn 2 y: 400
+         public static void MosaSpeed()
+{
+    GorillaLocomotion.Player.Instance.maxJumpSpeed = 3f;
+}
+if (GUI.Button(new Rect(rect scale here), "illegal color"))
+    collumn 1 x: 20
+         collumn 2 y: 430
+        public static void NegativeColor()
+{
+    PlayerPrefs.SetFloat("redValue", 0);
+    PlayerPrefs.SetFloat("greenValue", -2147483648);
+    PlayerPrefs.SetFloat("blueValue", 0);
+
+    GorillaTagger.Instance.UpdateColor(0, -2147483648, 0);
+    PlayerPrefs.Save();
+    GorillaTagger.Instance.myVRRig.RPC("InitializeNoobMaterial", RpcTarget.All, new object[] { 0, -2147483648, 0, false });
+
+}
+collumn 1 x: 20
+         collumn 2 y: 230
+        if (GUI.Button(new Rect(rect scale here), "Tp to stump"))
+{
+    input = GameObject.Find("Player Objects/Player VR Controller/GorillaPlayer").GetComponent<ControllerInputPoller>();
+    if (GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom").activeSelf == true)
+    {
+        if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+        {
+            foreach (MeshCollider mesh in Resources.FindObjectsOfTypeAll<MeshCollider>())
+            {
+                mesh.enabled = false;
+            }
+            GorillaLocomotion.Player.Instance.transform.position = new Vector3(-66.4848f, 11.8871f, -82.6619f);
+        }
+        else
+        {
+            foreach (MeshCollider mesh in Resources.FindObjectsOfTypeAll<MeshCollider>())
+            {
+                mesh.enabled = true;
+            }
+        }
+    }
+}
+collumn 1 x: 20
+         collumn 2 y: 260
+        if (GUI.Button(new Rect(rect scale here), "Join Random"))
+    public static void joinran()
+    {
+        PhotonNetwork.JoinRandomRoom();
+    }
+collumn 1 x: 20
+         collumn 2 y: 290
+         if (GUI.Button(new Rect(rect scale here), "Anti-Report"))
+    public static void AntiReportDisconnect()
+    {
+        try
+        {
+            if (boards == null)
+            {
+                boards = GameObject.FindObjectsOfType<GorillaScoreBoard>();
+            }
+            foreach (GorillaScoreBoard board in boards)
+            {
+                foreach (GorillaPlayerScoreboardLine line in board.lines)
+                {
+                    if (line.linePlayer == NetworkSystem.Instance.LocalPlayer)
+                    {
+                        Transform report = line.reportButton.gameObject.transform;
+                        foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+                        {
+                            if (vrrig != GorillaTagger.Instance.offlineVRRig)
+                            {
+                                float D1 = Vector3.Distance(vrrig.rightHandTransform.position, report.position);
+                                float D2 = Vector3.Distance(vrrig.leftHandTransform.position, report.position);
+
+                                float threshold = 0.35f;
+
+                                if (D1 < threshold || D2 < threshold)
+                                {
+                                    PhotonNetwork.Disconnect();
+                                    RPCProtection();
+                                    NotifiLib.SendNotification("<color=grey>[</color><color=purple>ANTI-REPORT</color><color=grey>]</color> <color=white>Someone attempted to report you, you have been disconnected.</color>");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch { } // Not connected
+    }
+collumn 1 x: 20
+        collumn 2 y:310
+
+
+         if (GUI.Button(new Rect(rect scale here), "RGB"))
+    collumn 1 x: 20
+         collumn 2 y: 340
+         public static void MakeEveryoneRGB()
+{
+    float time = Time.time;
+    float r = Mathf.Sin(time * 2f) * 0.5f + 0.5f;
+    float g = Mathf.Sin(time * 1.5f) * 0.5f + 0.5f;
+    float b = Mathf.Sin(time * 2.5f) * 0.5f + 0.5f;
+
+    foreach (VRRig vrrig in (VRRig[])GameObject.FindObjectsOfType(typeof(VRRig)))
+    {
+        vrrig.mainSkin.material.color = new Color(r, g, b);
+    }
+}
+void MainGUI(int windowID)
+{
+    GUI.color = guicolor;
+    GUI.backgroundColor = guicolor;
+    GUI.contentColor = guicolor;
+    inputText = GUI.TextArea(new Rect(20, 50, 100, 20), inputText);
+    int page = numpage + 1;
+    GUI.Label(new Rect(230, 20, 200, 20), "Page: " + page);
+    switch (numpage)
+            public static void CrashAll()
+    {
+
+    }
+    {
+
+        if (GUI.Button(new Rect(0, 450, 500, 20), "next page")) //forward 
+        {
+            numpage++;
+        }
+
+        break;
+
+                case 1: // page 2
+            if (GUI.Button(new Rect(rect scale here), ""))
+
+                collumn 1 x: 20
+         collumn 2 y: 230
+        if (GUI.Button(new Rect(rect scale here), ""))
+                collumn 1 x: 20
+         collumn 2 y: 260
+        if (GUI.Button(new Rect(rect scale here), ""))
+
+                collumn 1 x: 20
+         collumn 2 y: 290
+                       if (GUI.Button(new Rect(rect scale here), "illegal color"))
+                collumn 1 x: 20
+         collumn 2 y: 320
+        public static void NegativeColor()
+            {
+                PlayerPrefs.SetFloat("redValue", 0);
+                PlayerPrefs.SetFloat("greenValue", -2147483648);
+                PlayerPrefs.SetFloat("blueValue", 0);
+
+                GorillaTagger.Instance.UpdateColor(0, -2147483648, 0);
+                PlayerPrefs.Save();
+                GorillaTagger.Instance.myVRRig.RPC("InitializeNoobMaterial", RpcTarget.All, new object[] { 0, -2147483648, 0, false });
+
+            }
+            collumn 1 x: 20
+         collumn 2 y: 350
+        if (GUI.Button(new Rect(rect scale here), "Tp to stump"))
+            {
+                input = GameObject.Find("Player Objects/Player VR Controller/GorillaPlayer").GetComponent<ControllerInputPoller>();
+                if (GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom").activeSelf == true)
+                {
+                    if (ControllerInputPoller.instance.rightControllerPrimaryButton)
+                    {
+                        foreach (MeshCollider mesh in Resources.FindObjectsOfTypeAll<MeshCollider>())
+                        {
+                            mesh.enabled = false;
+                        }
+                        GorillaLocomotion.Player.Instance.transform.position = new Vector3(-66.4848f, 11.8871f, -82.6619f);
+                    }
+                    else
+                    {
+                        foreach (MeshCollider mesh in Resources.FindObjectsOfTypeAll<MeshCollider>())
+                        {
+                            mesh.enabled = true;
+                        }
+                    }
+                }
+            }
+            collumn 1 x: 20
+         collumn 2 y: 380
+        if (GUI.Button(new Rect(rect scale here), "Join Random"))
+                public static void joinran()
+                {
+                    PhotonNetwork.JoinRandomRoom();
+                }
+            collumn 1 x: 20
+         collumn 2 y: 410
+         if (GUI.Button(new Rect(rect scale here), "Anti-Report"))
+                public static void AntiReportDisconnect()
+                {
+                    try
+                    {
+                        if (boards == null)
+                        {
+                            boards = GameObject.FindObjectsOfType<GorillaScoreBoard>();
+                        }
+                        foreach (GorillaScoreBoard board in boards)
+                        {
+                            foreach (GorillaPlayerScoreboardLine line in board.lines)
+                            {
+                                if (line.linePlayer == NetworkSystem.Instance.LocalPlayer)
+                                {
+                                    Transform report = line.reportButton.gameObject.transform;
+                                    foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+                                    {
+                                        if (vrrig != GorillaTagger.Instance.offlineVRRig)
+                                        {
+                                            float D1 = Vector3.Distance(vrrig.rightHandTransform.position, report.position);
+                                            float D2 = Vector3.Distance(vrrig.leftHandTransform.position, report.position);
+
+                                            float threshold = 0.35f;
+
+                                            if (D1 < threshold || D2 < threshold)
+                                            {
+                                                PhotonNetwork.Disconnect();
+                                                RPCProtection();
+                                                NotifiLib.SendNotification("<color=grey>[</color><color=purple>ANTI-REPORT</color><color=grey>]</color> <color=white>Someone attempted to report you, you have been disconnected.</color>");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch { } // Not connected
+                }
+            collumn 1 x: 20
+        collumn 2 y: 450
+
+
+         if (GUI.Button(new Rect(rect scale here), "Flush RPCs"))
+                collumn 1 x: 20
+         collumn 2 y: 480
+         public static void FlushRPCS()
+            {
+                PhotonNetwork.RemoveRPCs(PhotonNetwork.LocalPlayer);
+                if (GorillaTagger.Instance.myVRRig != null)
+                {
+                    PhotonNetwork.RemoveRPCs(GorillaTagger.Instance.myVRRig);
+                    PhotonNetwork.RemoveBufferedRPCs(GorillaTagger.Instance.myVRRig.ViewID, null, null);
+                }
+                GorillaNot.instance.rpcCallLimit = int.MaxValue;
+            }
+        }
+    }
+
+    if (GUI.Button(new Rect(20, 80, 100, 20), "mister"))
+    {
+
+    }
+    if (GUI.Button(new Rect(0, 450, 500, 20), "next page")) //forward 
+    {
+        numpage++;
+    }
+
+    if (GUI.Button(new Rect(0, 470, 500, 20), "previous page")) //backward 
+    {
+        numpage--;
+    }
+    break;
+}
+        }
+    }
+}
